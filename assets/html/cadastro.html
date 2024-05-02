@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index.html">Catalago</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/assets/html/login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/assets/html/cadastro.html">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/assets/html/perfil.html">Perfil</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+        
+    <form method="POST" onsubmit="return postRegister(event)">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User name</label>
+        <input type="usermane" name="username"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputCPassword1" class="form-label">Confirm Password</label>
+        <input type="password" name="password_confirm" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+      
+    <!-- End Example Code -->
+  </body>
+  <script>
+    function postRegister(e) {
+    e.preventDefault();
+    console.log(e)
+    fetch("http://127.0.0.1:3000/register", {
+        credentials: "include",
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            "username": e.target.elements.username.value,
+            "email": e.target.elements.email.value,
+            "password": e.target.elements.password.value,   
+            "password_confirm": e.target.elements.password_confirm.value,
+        }),
+    })
+    .then(res => {
+        if (res.status >= 400) {
+            alert("error");
+            //need to implement error handling
+            throw new Error('error')
+        }
+        
+        res.json();
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('dededwdadwdaaAAAAAAAAAAAAAA')
+      }
+
+      return response.json()
+    })
+
+    .then(data => {
+      console.log(data)
+    })
+
+    return false
+}
+  </script>
+</html>
