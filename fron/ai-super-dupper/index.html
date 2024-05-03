@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script type="importmap">
@@ -18,12 +18,42 @@
 
   </head>
   <body>
+
+    <header>
+      <h1>Pulo do Gato</h1>
+      <img src="/fron/ai-super-dupper/img/_7b87443b-abda-4b13-8c8b-e497b9df2738-removebg-preview.png" alt="MDN logo">
+  </header>
+
+  <div class="dropdown">
+      <button class="dropbtn">Dropdown</button>
+      <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+      </div>
+  </div>
+
+  <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Prompt</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
     <div id="app"></div>
 
-    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-    <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
-    <canvas id="myChart3" style="width:100%;max-width:600px"></canvas>
-    <canvas id="myChart4" style="width:100%;max-width:600px"></canvas>
+    <div class="container">
+      <div class="chart-container">
+          <canvas id="myChart" style="max-width: 700px;"></canvas>
+      </div>
+      <div class="chart-container">
+          <canvas id="myChart2" style="max-width: 600px;"></canvas>
+      </div>
+      <div class="chart-container">
+          <canvas id="myChart3" style="max-width: 600px;"></canvas>
+      </div>
+      <div class="chart-container">
+          <canvas id="myChart4" style="max-width: 600px;"></canvas>
+      </div>
+  </div>
 
     <script type="module">
 
