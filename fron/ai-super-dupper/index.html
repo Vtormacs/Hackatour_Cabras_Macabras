@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Relatório Principal</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -21,24 +21,26 @@
 
     <header>
       <h1>Pulo do Gato</h1>
-      <img src="/fron/ai-super-dupper/img/_7b87443b-abda-4b13-8c8b-e497b9df2738-removebg-preview.png" alt="MDN logo">
+      <img src="/fron/ai-super-dupper/img/_7b87443b-abda-4b13-8c8b-e497b9df2738-removebg-preview.png" alt="">
   </header>
 
-  <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
-      <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-      </div>
+  <div class="button" style="margin-left: 40%">
+      <button class=""><a href="relatorio.html" style="text-decoration: none; color: black;">Relatório Março</a></button>
+      <button class=""><a href="relatorio_dois.html" style="text-decoration: none; color: black;">Relatório Abril</a></button>
   </div>
 
-  <form id="formPrompt">
+  <form id="formPrompt" onsubmit="return ">
     <textarea name="prompt">Envie o comando do prompt</textarea>
     <button type="submit">Enviar</button>
   </form>
 
-    <div id="app"></div>
+
+  <h1 style="text-align: center; margin: 10px">Relatório Principal</h1>
+
+  <div class="relatorio" style="margin: 20px 40px;">
+    <p>Os turistas, provenientes tanto do Brasil quanto de Portugal, são atraídos principalmente pelo espetáculo natural proporcionado pelas Cataratas do Iguaçu. O turismo familiar é predominante, seguido por casais em busca de momentos especiais. A maioria dos visitantes elogia a organização do parque e a beleza das paisagens. No entanto, alguns mencionam a lotação em feriados e a falta de meia entrada para idosos como pontos negativos.</p>
+  </div>
+
 
     <div class="container">
       <div class="chart-container">
@@ -71,6 +73,7 @@
     model.generateContent(prompt1+data+prompt2).then(res => {
       return res.response;
     }).then(text => {
+      console.log(text.text())
       return JSON.parse(text.text())
     }).then(data => {
 
@@ -123,7 +126,7 @@
           }
         }
       });
-
+      
       var xValues3 = ["Avião", "Carro", "Ônibus"];
       var yValues3 = [data.meio_de_chegada.Avião, data.meio_de_chegada.Carro, data.meio_de_chegada.Ônibus]; // variables here
       var barColors3 = [

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relatório Março</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  </head>
+  <body>
+
+    <header>
+      <h1>Pulo do Gato</h1>
+      <img src="/fron/ai-super-dupper/img/_7b87443b-abda-4b13-8c8b-e497b9df2738-removebg-preview.png" alt="">
+  </header>
+
+  <div class="button" >
+    <button class="">
+        <a href="index.html" style="text-decoration: none; color: black;">Voltar ao relatório principal</a>
+    </button>
+      <button class="button" style="text-decoration: none; color: black;">
+        <a href="relatorio_dois.html" style="text-decoration: none;">Relatório de Abril</a>
+    </button>
+  </div>
+
+  <h1 style="text-align: center; margin: 10px">Relatório Março</h1>
+
+
+    <div id="app"></div>
+
+    <div class="container">
+      <div class="chart-container">
+          <canvas id="myChart" style="max-width: 700px;"></canvas>
+      </div>
+      <div class="chart-container">
+          <canvas id="myChart2" style="max-width: 600px;"></canvas>
+      </div>
+      <div class="chart-container">
+          <canvas id="myChart3" style="max-width: 600px;"></canvas>
+      </div>
+      <div class="chart-container">
+          <canvas id="myChart4" style="max-width: 600px;"></canvas>
+      </div>
+  </div>
+
+    <script type="module">
+
+      var xValues = ["Casais", "Família", "A sós"];
+      var yValues = [10,
+        20,
+        5
+      ];
+      var barColors = ["red", "green","blue","orange"];
+
+      new Chart("myChart2", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: {display: false},
+          title: {
+            display: true,
+            text: "Tipo de Turismo:"
+          }
+        }
+      });
+
+
+      var xValues2 = ["Nacional", "Internacional"];
+      var yValues2 = [25, 9]; // variables here
+      var barColors2 = [
+        "#b91d47",
+        "#2b5797"
+      ];
+
+      new Chart("myChart", {
+        type: "pie",
+        data: {
+          labels: xValues2,
+          datasets: [{
+            backgroundColor: barColors2,
+            data: yValues2
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Origem dos Visitantes:"
+          }
+        }
+      });
+
+      var xValues3 = ["Avião", "Carro", "Ônibus"];
+      var yValues3 = [30, 5, 10]; // variables here
+      var barColors3 = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+      ];
+
+      new Chart("myChart3", {
+        type: "doughnut",
+        data: {
+          labels: xValues3,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues3
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Meio de Chegada à Foz do Iguaçu"
+          }
+        }
+      });
+
+
+      var xValues4 = ["Positivas", "Negativas"];
+      var yValues4 = [30, 5];
+      var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+      ];
+
+      new Chart("myChart4", {
+        type: "pie",
+        data: {
+          labels: xValues4,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues4
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Percentagem de Reviews Positivos e Negativos:"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
