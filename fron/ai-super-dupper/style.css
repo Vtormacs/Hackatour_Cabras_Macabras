@@ -120,3 +120,8 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #939493;
 }
+
+
+#formPrompt {
+  text-align: center;
+}
