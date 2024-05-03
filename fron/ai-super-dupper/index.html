@@ -41,7 +41,6 @@
     model.generateContent(prompt1+data+prompt2).then(res => {
       return res.response;
     }).then(text => {
-      console.log(text.text())
       return JSON.parse(text.text())
     }).then(data => {
 
