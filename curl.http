@@ -1,9 +1,0 @@
-POST http://localhost:3000/register 
-Content-Type: application/json
-
-{
-    "username": "Tia Do Pão",
-    "email": "tiadopao@hotmail.com",
-    "password": "123456",
-    "password_confirm": "123456"
-}
