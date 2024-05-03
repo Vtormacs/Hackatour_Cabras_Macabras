@@ -63,6 +63,17 @@ h1 {
   margin-right: 10px; /* Espaçamento à direita da logo */
 }
 
+h3 {
+  font-size: 1.9rem;
+  color: #333; /* Cor do texto */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Espaçamento entre as letras */
+  margin-bottom: 20px; /* Espaçamento inferior */
+  font-family: 'Roboto', sans-serif; /* Fonte do Google Fonts */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+  margin-right: 20px; /* Espaçamento à direita da logo */
+}
+
 /* Estilo para a logo */
 img {
   width: 70px; /* Definir a largura da imagem */
@@ -79,49 +90,86 @@ body {
 }
 
 
-.dropbtn {
-  background-color: #0f0f0f;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px; /* Adiciona margem direita */
-  border-radius: 8px;
+/* Estilos para o contêiner dos botões */
+.button {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.dropdown {
-  position: relative;
+/* Estilos para os botões */
+.button button {
   display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 12;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+  background-color: 828682;
+  border: none;
+  color: rgb(247, 247, 247);
+  padding: 10px 20px;
+  text-align: center;
   text-decoration: none;
-  display: block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+/* Estilizar o hover dos botões */
+.button button:hover {
+  background-color: #5f5f5f;
 }
-
-.dropdown:hover .dropbtn {
-  background-color: #939493;
-}
-
 
 #formPrompt {
   text-align: center;
 }
+
+   /* Estilos para o relatório */
+   .relatorio {
+    margin: 20px 40px;
+    padding: 15px; /* Adicionando um preenchimento interno */
+    border: 1px solid #ccc; /* Adicionando uma borda */
+    border-radius: 5px; /* Arredondando as bordas */
+    background-color: #f9f9f9; /* Adicionando uma cor de fundo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicionando uma sombra */
+}
+
+.relatorio p {
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.6; /* Altura da linha */
+}
+
+/* Estilos para o formulário */
+#formPrompt {
+  margin: 20px auto; /* Centraliza o formulário horizontalmente */
+  max-width: 400px; /* Define uma largura máxima para o formulário */
+  padding: 20px; /* Adiciona um preenchimento interno ao formulário */
+  border: 1px solid #ccc; /* Adiciona uma borda ao redor do formulário */
+  border-radius: 5px; /* Arredonda as bordas do formulário */
+  background-color: #f9f9f9; /* Define uma cor de fundo para o formulário */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao formulário */
+}
+
+/* Estilos para o campo de texto */
+#formPrompt textarea {
+  width: 100%; /* Define a largura do campo de texto para ocupar todo o espaço disponível */
+  padding: 10px; /* Adiciona um preenchimento interno ao campo de texto */
+  margin-bottom: 10px; /* Adiciona um espaçamento abaixo do campo de texto */
+  border: 1px solid #ccc; /* Adiciona uma borda ao redor do campo de texto */
+  border-radius: 5px; /* Arredonda as bordas do campo de texto */
+  resize: vertical; /* Permite redimensionar verticalmente o campo de texto */
+}
+
+/* Estilos para o botão */
+#formPrompt button {
+  background-color: #828682; /* Define a cor de fundo do botão */
+  color: rgb(0, 0, 0); /* Define a cor do texto do botão */
+  padding: 10px 20px; /* Adiciona um preenchimento interno ao botão */
+  border: none; /* Remove a borda do botão */
+  border-radius: 5px; /* Arredonda as bordas do botão */
+  cursor: pointer; /* Muda o cursor para uma mão quando passa sobre o botão */
+  transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor de fundo do botão */
+}
+
+/* Estilos para o botão quando passa o mouse sobre ele */
+#formPrompt button:hover {
+  background-color: #393a39; /* Altera a cor de fundo do botão quando passa o mouse sobre ele */
+}
+
